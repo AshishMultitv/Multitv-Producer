@@ -112,6 +112,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StatefulTableView/StatefulTableView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UILoadControl/UILoadControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VGSegment/VGSegment.framework"
 fi
@@ -126,6 +127,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StatefulTableView/StatefulTableView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/UILoadControl/UILoadControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VGSegment/VGSegment.framework"
 fi

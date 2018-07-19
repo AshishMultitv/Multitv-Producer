@@ -13,6 +13,7 @@ import Photos
 import VideoToolbox
 import FTPopOverMenu_Swift
 import MediaPlayer
+import Toast_Swift
 
 let sampleRate: Double = 44_100
 
@@ -45,10 +46,12 @@ final class RTMPViewController: UIViewController {
     
     @IBOutlet weak var videoBitrateSlider: UISlider!
     @IBOutlet weak var actionviewbutton: UIButton!
+    
     @IBOutlet weak var actionview: UIView!
     @IBOutlet var lfView: GLLFView?
       var currentPosition: AVCaptureDevice.Position = .back
     
+    @IBOutlet weak var golivebutton: UIButton!
     
     @IBOutlet weak var networkview: UIView!
     @IBOutlet weak var livesttuslabel: UILabel!
@@ -155,6 +158,7 @@ final class RTMPViewController: UIViewController {
         }
         rtmpStream.addObserver(self, forKeyPath: "currentFPS", options: .new, context: nil)
         lfView?.attachStream(rtmpStream)
+        
     }
     
 
@@ -438,8 +442,7 @@ final class RTMPViewController: UIViewController {
         return
         }
         
-      
-        
+    
         if sender.isSelected {
               UIApplication.shared.isIdleTimerDisabled = false
             rtmpConnection.close()
@@ -467,6 +470,8 @@ final class RTMPViewController: UIViewController {
    
  
    
+ 
+    
     
     @objc func rtmpStatusHandler(_ notification: Notification) {
         let e: Event = Event.from(notification)
@@ -481,16 +486,61 @@ final class RTMPViewController: UIViewController {
                 {
                   rtmpStream!.publish(Preference.defaultInstance.streamName!)
                 }
-             //rtmpStream!.publish(Preference.defaultInstance.streamName!)
-             // sharedObject!.connect(rtmpConnection)
-           // rtmpStream.publish(Preference.defaultInstance.streamName!, type: .localRecord)
-           
-                
-                
+            case RTMPConnection.Code.callBadVersion.rawValue:
+                print("NetConnection.Call.BadVersion")
+            case RTMPConnection.Code.callFailed.rawValue:
+                print("NetConnection.Call.Failed")
+                connectiodisconnectalert(text: "NetConnection.Call.Failed")
+            case RTMPConnection.Code.callProhibited.rawValue:
+                print("NetConnection.Call.Prohibited")
+            case RTMPConnection.Code.connectAppshutdown.rawValue:
+                print("NetConnection.Connect.AppShutdown")
+            case RTMPConnection.Code.connectClosed.rawValue:
+                 print("NetConnection.Connect.Closed")
+                 connectiodisconnectalert(text: "NetConnection.Connect.Closed")
+            case RTMPConnection.Code.connectFailed.rawValue:
+                print("NetConnection.Connect.Failed")
+                connectiodisconnectalert(text: "NetConnection.Connect.Failed")
+            case RTMPConnection.Code.connectIdleTimeOut.rawValue:
+                print("NetConnection.Connect.IdleTimeOut")
+                connectiodisconnectalert(text: "NetConnection.Connect.IdleTimeOut")
+            case RTMPConnection.Code.connectInvalidApp.rawValue:
+                print("NetConnection.Connect.InvalidApp")
+             case RTMPConnection.Code.connectNetworkChange.rawValue:
+                print("NetConnection.Connect.NetworkChanget")
+            case RTMPConnection.Code.connectRejected.rawValue:
+                print("NetConnection.Connect.Rejected")
+                connectiodisconnectalert(text: "NetConnection.Connect.Rejected")
             default:
                 break
             }
         }
+    }
+    
+    
+    
+    func connectiodisconnectalert(text:String) {
+        
+        
+         self.rtmpConnection.close()
+        self.rtmpConnection.removeEventListener(Event.RTMP_STATUS, selector: #selector(self.rtmpStatusHandler), observer: self)
+        self.golivebutton.isSelected = false
+        self.tapTobrodcasting(self.golivebutton)
+        
+        
+        
+//        let alert = UIAlertController(title: text, message: "Network is not stable and has dropped", preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "Reconnect ?", style: UIAlertActionStyle.default, handler: { (action) in
+//
+//            self.rtmpConnection.close()
+//            self.rtmpConnection.removeEventListener(Event.RTMP_STATUS, selector: #selector(self.rtmpStatusHandler), observer: self)
+//             self.golivebutton.isSelected = false
+//             self.tapTobrodcasting(self.golivebutton)
+//          }))
+//        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { (action) in
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func TaptoMenu(_ sender: UIButton) {
@@ -559,15 +609,16 @@ final class RTMPViewController: UIViewController {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if Thread.isMainThread {
-           
+           print(" currentBytesPerSecond ======== \(rtmpStream.info.currentBytesPerSecond)")
+            sppedlabel.text = self.getuploadingspped(bynerpersec: rtmpStream.info.currentBytesPerSecond)
             
-       
-          print(" currentBytesPerSecond ======== \(rtmpStream.info.currentBytesPerSecond)")
+            if(!Common.isInternetAvailable())
+              {
+                sppedlabel.text = "0 Kbps"
+               self.view.makeToast("Network is not stable and has dropped, make sure that device is connected to internet, try Reconnecting!", duration: 2.0, position: .bottom)
+                }
             
-           sppedlabel.text = self.getuploadingspped(bynerpersec: rtmpStream.info.currentBytesPerSecond)
-          
-            
-       //     print(" RTMP FPS ======== \(rtmpStream.currentFPS)")
+        //     print(" RTMP FPS ======== \(rtmpStream.currentFPS)")
          }
     }
     /*

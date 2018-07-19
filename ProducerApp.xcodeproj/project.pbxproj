@@ -363,6 +363,7 @@
 				37A3A159209AECEC00F75BFD /* Resources */,
 				0C1893EC9EA8E5C1DE50C322 /* [CP] Embed Pods Frameworks */,
 				ED89C98C2FD0770277DC9065 /* [CP] Copy Pods Resources */,
+				371EFE4B20FC9A1E0043B7FB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -479,6 +480,7 @@
 				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/StatefulTableView/StatefulTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/UILoadControl/UILoadControl.framework",
 				"${BUILT_PRODUCTS_DIR}/VGSegment/VGSegment.framework",
 			);
@@ -494,6 +496,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatefulTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UILoadControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VGSegment.framework",
 			);
@@ -501,6 +504,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProducerApp/Pods-ProducerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		371EFE4B20FC9A1E0043B7FB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d3ad30f9b7f0fbd32df9c06b1ffc25845dfc1ea7 7c2139a293b376c5c4f0cf774d3ea9c2af21b24e6ad6770e3b80511f10c60c3b";
 		};
 		3DF1648E5FB2131C4F3A0AA4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -694,8 +710,8 @@
 			baseConfigurationReference = 05FECA8C0271E7C8D79D420F /* Pods-ProducerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MULTITV TECH SOLUTION PRIVATE LIMITED (7YK47J75V8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MULTITV TECH SOLUTION PRIVATE LIMITED (7YK47J75V8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vikash Samota (H3F7HYP5TH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vikash Samota (H3F7HYP5TH)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7YK47J75V8;
 				INFOPLIST_FILE = ProducerApp/Info.plist;
@@ -703,8 +719,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.multitvproducer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "407b2c2d-fc87-4976-8997-a15c4a5290e2";
-				PROVISIONING_PROFILE_SPECIFIER = PRODUCER;
+				PROVISIONING_PROFILE = "e6b57f90-1f74-4602-82ab-dd0ed9bed90f";
+				PROVISIONING_PROFILE_SPECIFIER = Producer_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -715,8 +731,8 @@
 			baseConfigurationReference = 0B50346B71654A5DDC46BDBE /* Pods-ProducerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MULTITV TECH SOLUTION PRIVATE LIMITED (7YK47J75V8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MULTITV TECH SOLUTION PRIVATE LIMITED (7YK47J75V8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vikash Samota (H3F7HYP5TH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vikash Samota (H3F7HYP5TH)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7YK47J75V8;
 				INFOPLIST_FILE = ProducerApp/Info.plist;
@@ -724,8 +740,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.multitvproducer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "407b2c2d-fc87-4976-8997-a15c4a5290e2";
-				PROVISIONING_PROFILE_SPECIFIER = PRODUCER;
+				PROVISIONING_PROFILE = "e6b57f90-1f74-4602-82ab-dd0ed9bed90f";
+				PROVISIONING_PROFILE_SPECIFIER = Producer_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

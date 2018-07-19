@@ -200,7 +200,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 let number = dict.value(forKey: "code") as! NSNumber
                 if(number == 0)
                 {
-                    Common.Showalert(view: self, text: dict.value(forKey: "result") as! String)
+                    Common.Showalert(view: self, text: dict.value(forKey: "error") as! String)
                     return
                 }
                 else{

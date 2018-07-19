@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.6)
   - FTPopOverMenu_Swift (0.0.9)
   - HaishinKit (0.8.8):
     - Logboard (~> 1.1.2)
@@ -24,11 +27,14 @@ PODS:
   - PullToRefreshKit (0.8.6)
   - ReachabilitySwift (3)
   - StatefulTableView (0.1.0)
+  - Toast-Swift (3.0.1)
   - UILoadControl (2.1.0)
   - VGSegment (1.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Crashlytics
+  - Fabric
   - FTPopOverMenu_Swift (~> 0.0.6)
   - HaishinKit
   - IQKeyboardManagerSwift
@@ -37,11 +43,14 @@ DEPENDENCIES:
   - PullToRefreshKit
   - ReachabilitySwift (~> 3)
   - StatefulTableView (= 0.1.0)
+  - Toast-Swift (~> 3.0.1)
   - UILoadControl
   - VGSegment
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   FTPopOverMenu_Swift: 3c1c01a5005a06230ea4b7b9f4a96300f5748bd7
   HaishinKit: 3f0079a56625050ea7f42af292ae9c554ff4872f
   IQKeyboardManagerSwift: 59d4b0e140bc546c3c76ae5bb35b3dafd10b8172
@@ -51,9 +60,10 @@ SPEC CHECKSUMS:
   PullToRefreshKit: 172df52ab9c6cb2c1d4b1872b49f448d6291523f
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   StatefulTableView: be99827cf564125aedbc0738caa5b9742839cd59
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   UILoadControl: e742ddbe4c67ba1f13b00b7d462d4141307d021f
   VGSegment: 3ec2e48610b320a0f0d0e9938fabb016df4ac7eb
 
-PODFILE CHECKSUM: 035c04b2cbae999afd9923391a84cd0391ace2c4
+PODFILE CHECKSUM: 2c22f4974c61efa5ebe8ea0c21d7ebdce48d99df
 
 COCOAPODS: 1.3.1

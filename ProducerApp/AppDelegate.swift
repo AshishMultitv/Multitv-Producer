@@ -11,8 +11,8 @@ import IQKeyboardManagerSwift
 import Logboard
 import AVFoundation
 import HaishinKit
-
-
+import Fabric
+import Crashlytics
 
 
 let logger: Logboard = Logboard.with("com.haishinkit.Exsample.iOS")
@@ -27,8 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Answers.self])
         IQKeyboardManager.shared.enable = true
-         AppUtility.lockOrientation([.portrait])
+        AppUtility.lockOrientation([.portrait])
         Logboard.with(HaishinKitIdentifier).level = .trace
         let session: AVAudioSession = AVAudioSession.sharedInstance()
         do {

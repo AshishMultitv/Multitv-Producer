@@ -976,6 +976,7 @@
                         <outlet property="actionviewbutton" destination="5M3-EA-JPM" id="Wfo-Qk-WAp"/>
                         <outlet property="bitratelabel" destination="Odn-Vn-wdh" id="3gz-dW-wba"/>
                         <outlet property="bitratenamelabel" destination="m57-Zu-3Ja" id="Bco-1Z-IjW"/>
+                        <outlet property="golivebutton" destination="oRg-7I-9wu" id="Wvt-0A-mqN"/>
                         <outlet property="lfView" destination="eUe-30-mTS" id="K4s-1b-ATp"/>
                         <outlet property="livesttuslabel" destination="cnP-tA-ufy" id="OUd-Fo-YsT"/>
                         <outlet property="networkimageview" destination="Ph7-qu-j04" id="qby-sH-iul"/>

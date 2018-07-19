@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FA1DAC5253C6AD45A42D6E909DFC7BB3'
+               BlueprintIdentifier = '498F20F624E136FA3D2B8D86C599E2BD'
                BlueprintName = 'StatefulTableView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'StatefulTableView.framework'>

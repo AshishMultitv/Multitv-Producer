@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1F7A5F610813E22DB5CBB1776E4CF451'
+               BlueprintIdentifier = '97E936C9AD5394386EC2E2BE3B7F09AB'
                BlueprintName = 'VGSegment'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'VGSegment.framework'>

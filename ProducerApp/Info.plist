@@ -12,6 +12,20 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>d3ad30f9b7f0fbd32df9c06b1ffc25845dfc1ea7</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+				<key>KitInfo</key>
+				<dict/>
+			</dict>
+		</array>
+	</dict>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -19,7 +33,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,15 +42,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>..</string>
+	<string>Producer uses your camera to capture video from your smartphone for event streaming. </string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application requires your location.</string>
+	<string>Producer uses your location to auto fill as event location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app will use your location to show you location.</string>
+	<string>Producer uses your location to auto fill as event location.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>..</string>
+	<string>Producer uses you audio mic to capture audio from your smartphone for event streaming. </string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to the photo library</string>
+	<string>Producer uses your library to </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

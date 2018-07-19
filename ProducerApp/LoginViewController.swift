@@ -78,9 +78,7 @@ class LoginViewController: UIViewController {
                 {
                     let logindict = ["id":((dict.value(forKey: "result") as! NSDictionary).value(forKey: "id") as! NSNumber).stringValue,
                                      "rtmp":(dict.value(forKey: "result") as! NSDictionary).value(forKey: "RTMP") as! String]
-                    
-                    print(logindict as NSDictionary)
-                    
+                 print(logindict as NSDictionary)
                 AppData.Loginuserdata = logindict as NSDictionary
                 AppData.Stremname = (dict.value(forKey: "result") as! NSDictionary).value(forKey: "stream_name") as! String
                 let url = (dict.value(forKey: "result") as! NSDictionary).value(forKey: "RTMP") as! String

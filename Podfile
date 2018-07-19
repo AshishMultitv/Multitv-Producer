@@ -15,6 +15,10 @@ target 'ProducerApp' do
   pod 'PullToRefreshKit'
   pod 'UILoadControl'
   pod 'FTPopOverMenu_Swift', '~> 0.0.6'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'Toast-Swift', '~> 3.0.1'
+
 
 
   
